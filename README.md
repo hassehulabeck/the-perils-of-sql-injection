@@ -10,9 +10,9 @@
 2. Kör ```node index.js```
 
 ## Testkör
-1. Skriv in adressen ```http://localhost:8080/users/1
+1. Skriv in adressen ```http://localhost:8080/users/1```
 2. All info om användare 1 i user-tabellen ska visas. Det finns användare 1-4 i databasen.
-3. Skriv in adressen ```http://localhost:8080/members/1
+3. Skriv in adressen ```http://localhost:8080/members/1```
 4. All info om användare 1 i members-tabellen ska visas. Det finns användare 1-4 i databasen.
 
 ## Testkör en SQL injection
