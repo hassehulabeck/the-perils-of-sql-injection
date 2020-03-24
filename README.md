@@ -10,14 +10,14 @@
 2. Kör ```node index.js```
 
 ## Testkör
-1. Skriv in adressen ```http://localhost:8080/users/1```
+1. Skriv in adressen http://localhost:8080/users/1
 2. All info om användare 1 i user-tabellen ska visas. Det finns användare 1-4 i databasen.
-3. Skriv in adressen ```http://localhost:8080/members/1```
+3. Skriv in adressen http://localhost:8080/members/1
 4. All info om användare 1 i members-tabellen ska visas. Det finns användare 1-4 i databasen.
 
 ## Testkör en SQL injection
 Members-routen är skyddad mot injection, men det är inte users.
-Prova att skriv in adressen ```http://localhost:8080/users/1'%20OR%20'1=1``` och se vad du får fram.
+Prova att skriv in adressen http://localhost:8080/users/1'%20OR%20'1=1 och se vad du får fram.
 
 ### 1=1 är alltid sant
 Den del av URLen som följer på /users/1 är "tillägget" **OR 1=1**
@@ -37,7 +37,7 @@ Bättre är att göra som det andra avsnittet i koden:
     let query = "SELECT * FROM members WHERE id = " + connection.escape(req.params.id)
 ```
 Här använder vi en s k escape-funktion som tvättar bort eventuell skadlig kod.
-Så om du skriver in URLen ```http://localhost:8080/members/3'%20OR%20'1=1``` så får queryn följande utseende:
+Så om du skriver in URLen http://localhost:8080/members/3'%20OR%20'1=1 så får queryn följande utseende:
 ```mysql
 SELECT * FROM members WHERE id = '1\' OR \'1=1'
 ```
